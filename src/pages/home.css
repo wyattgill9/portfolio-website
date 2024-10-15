@@ -35,7 +35,7 @@ body {
 }
 
 .rounded-lg {
-    border-radius: 0.5rem; /* Rounded corners */
+    border-radius: 2rem; /* More rounded corners */
 }
 
 .shadow-lg {

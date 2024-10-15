@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './home.css'
+import './home.css';
 
 // Custom Icon Components
 const Mic = () => (
@@ -64,7 +64,10 @@ export default function Component() {
         </div>
         <div className="flex-grow">
           <h2 className="text-white text-lg font-semibold">Wyatt Gill</h2>
-          <p className="text-gray-400 text-sm">#2009</p>
+          <div className="flex items-center">
+            <span className="bg-green-500 w-2.5 h-2.5 rounded-full mr-2"></span>
+            <p className="text-gray-400 text-sm">Online</p>
+          </div>
         </div>
         <div className="flex space-x-4">
           <button
