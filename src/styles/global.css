@@ -1,50 +1,42 @@
 body {
-    margin: 0;
-    background-color: #1e1e2e;
-    color: #cdd6f4;
-    font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .app {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .terminal {
-    background-color: #1e1e2e;
-    padding: 20px;
-    border: 2px solid #cdd6f4;
-    border-radius: 5px;
-    width: 80%;
-    max-height: 80%;
-    overflow-y: auto;
-  }
-  
-  .output {
-    white-space: pre-wrap;
-  }
-  
-  .input-line {
-    display: flex;
-  }
-  
-  .prompt {
-    color: green;
-    margin-right: 5px;
-  }
-  
-  input {
-    background: transparent;
-    border: none;
-    color: #cdd6f4;
-    outline: none;
-    flex-grow: 1;
-  }
-  
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace; /* Use a monospaced font */
+  background-color: #1e1e1e; /* Dark background color */
+  color: #c5c8c6; /* Light gray text color */
+}
+
+.terminal {
+  padding: 1em;
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Enable scrolling */
+}
+
+.output {
+  margin-bottom: 1em; /* Space between output and input */
+}
+
+.input-line {
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.prompt {
+  color: #33cc33; /* Green prompt color */
+  margin-right: 0.5em; /* Space between prompt and input */
+}
+
+.terminal-input {
+  background: none; /* Transparent background */
+  border: none; /* No border */
+  color: #c5c8c6; /* Light gray text */
+  outline: none; /* Remove outline */
+  flex-grow: 1; /* Take remaining space */
+}
+
+.terminal-input::placeholder {
+  color: #5e5e5e; /* Placeholder color */
+}
+
+.terminal-input:focus {
+  outline: none; /* Remove focus outline */
+}
