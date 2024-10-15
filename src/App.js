@@ -1,13 +1,13 @@
-import React from 'react';
-import Home from './pages/home';
+import React from "react";
+import Terminal from "./components/Terminal";
+// import Component from "./pages/home";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Home/>
+    <div className="app">
+      <Terminal />
     </div>
   );
-}
+};
 
 export default App;
-

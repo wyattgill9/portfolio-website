@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .terminal {
+    background-color: #1e1e2e;
+    padding: 20px;
+    border: 2px solid #cdd6f4;
+    border-radius: 5px;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+  }
+  
+  .output {
+    white-space: pre-wrap;
+  }
+  
+  .input-line {
+    display: flex;
+  }
+  
+  .prompt {
+    color: green;
+    margin-right: 5px;
+  }
+  
+  input {
+    background: transparent;
+    border: none;
+    color: #cdd6f4;
+    outline: none;
+    flex-grow: 1;
+  }
+  
