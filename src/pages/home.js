@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './home.css'
 
 // Custom Icon Components
 const Mic = () => (
@@ -57,38 +58,30 @@ export default function Component() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-800">
-      <div className="bg-gray-700 p-4 rounded-lg shadow-lg">
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
-            JD
-          </div>
-          <div>
-            <h2 className="text-white text-lg font-semibold">JohnDoe</h2>
-            <p className="text-gray-400 text-sm">#1234</p>
-          </div>
+      <div className="bg-gray-700 p-4 rounded-lg shadow-lg flex items-center space-x-4">
+        <div className="w-12 h-12 bg-indigo-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+          WG
         </div>
-        <div className="mt-4 flex justify-center space-x-4">
+        <div className="flex-grow">
+          <h2 className="text-white text-lg font-semibold">Wyatt Gill</h2>
+          <p className="text-gray-400 text-sm">#2009</p>
+        </div>
+        <div className="flex space-x-4">
           <button
             onClick={() => setIsMuted(!isMuted)}
-            className={`p-2 rounded-full ${
-              isMuted ? "bg-red-500 hover:bg-red-600" : "bg-gray-600 hover:bg-gray-500"
-            }`}
+            className={`p-2 rounded-full ${isMuted ? "bg-red-500 hover:bg-red-600" : "bg-gray-600 hover:bg-gray-500"}`}
           >
             {isMuted ? <MicOff /> : <Mic />}
           </button>
           <button
             onClick={() => setIsDeafened(!isDeafened)}
-            className={`p-2 rounded-full ${
-              isDeafened ? "bg-red-500 hover:bg-red-600" : "bg-gray-600 hover:bg-gray-500"
-            }`}
+            className={`p-2 rounded-full ${isDeafened ? "bg-red-500 hover:bg-red-600" : "bg-gray-600 hover:bg-gray-500"}`}
           >
             {isDeafened ? <HeadphonesX /> : <Headphones />}
           </button>
           <button
             onClick={() => setIsVideoOn(!isVideoOn)}
-            className={`p-2 rounded-full ${
-              isVideoOn ? "bg-green-500 hover:bg-green-600" : "bg-gray-600 hover:bg-gray-500"
-            }`}
+            className={`p-2 rounded-full ${isVideoOn ? "bg-green-500 hover:bg-green-600" : "bg-gray-600 hover:bg-gray-500"}`}
           >
             {isVideoOn ? <Video /> : <VideoOff />}
           </button>
