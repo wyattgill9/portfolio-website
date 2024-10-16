@@ -10,13 +10,17 @@ import projects from "./commands/projects";
 import resume from "./commands/resume";
 import website from "./commands/website";
 import whoami from "./commands/whoami";
+import iykyk from "./commands/eastereggs";
+import vim from "./commands/vim";
+import remove from "./commands/remove";
+
 
 const Terminal = () => {
   const [history, setHistory] = useState([]);
   const [command, setCommand] = useState("");
   const inputRef = useRef(null);
-  const [currentDir, setCurrentDir] = useState("home");
-  const [currentPath, setCurrentPath] = useState(["home"]);
+  const [currentDir, setCurrentDir] = useState("~");
+  const [currentPath, setCurrentPath] = useState(["~"]);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -80,9 +84,22 @@ const Terminal = () => {
       case "whoami":
         output = whoami();
         break;
+      case "iykyk":
+        output = iykyk();
+        break  
+      case "vim":
+        output = vim();
+        break 
+      case "rm":
+        output = remove();
+        break
+      case "sudo":
+        output = window.close()
+        break
+
       default:
         output = [`bash: ${parts.command}: command not found`];
-        break;
+        break;  
     }
 
     setHistory((prev) => [...prev, ...output]);
@@ -96,7 +113,7 @@ const Terminal = () => {
         ))}
       </div>
       <div className="input-line">
-        <span className="prompt">visitor@wyatts-dell:{currentPath.join("/")} $</span>
+        <span className="prompt">visitor@wyattgill.com /{currentPath.join("/")} $</span>
         <input
           ref={inputRef}
           type="text"
