@@ -15,13 +15,13 @@ const Terminal = () => {
   const [history, setHistory] = useState([]);
   const [command, setCommand] = useState("");
   const inputRef = useRef(null);
-  const [currentDir, setCurrentDir] = useState("~");
-  const [currentPath, setCurrentPath] = useState(["~"]);
+  const [currentDir, setCurrentDir] = useState("home");
+  const [currentPath, setCurrentPath] = useState(["home"]);
 
   useEffect(() => {
     inputRef.current.focus();
     setHistory([
-      "Welcome to my portfolio website! Type 'help' for commands.",
+      "Welcome to my Linux-style portfolio! Type 'help' for commands.",
       ""
     ]);
   }, []);
@@ -96,7 +96,7 @@ const Terminal = () => {
         ))}
       </div>
       <div className="input-line">
-        <span className="prompt">wyatt@wyatts-dell MINGW64 {currentPath.join("/")}/ $</span>
+        <span className="prompt">visitor@linux-portfolio:{currentPath.join("/")} $</span>
         <input
           ref={inputRef}
           type="text"
