@@ -11,7 +11,8 @@ const help = () => {
       "- man <command>: Show manual for a command",
       "- website: Open my website",
       "- whoami: Show information about current user",
-      "- vim: A highly configurable text editor"
+      "- vim: A highly configurable text editor",
+      "- echo: echos information"
     ];
   };
   

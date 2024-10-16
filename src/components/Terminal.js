@@ -13,6 +13,7 @@ import whoami from "./commands/whoami";
 import iykyk from "./commands/eastereggs";
 import vim from "./commands/vim";
 import remove from "./commands/remove";
+import echo from "./commands/echo";
 
 
 const Terminal = () => {
@@ -96,7 +97,9 @@ const Terminal = () => {
       case "sudo":
         output = window.close()
         break
-
+      case "echo":
+        output = echo()
+        break
       default:
         output = [`bash: ${parts.command}: command not found`];
         break;  
