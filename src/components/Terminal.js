@@ -96,7 +96,7 @@ const Terminal = () => {
         ))}
       </div>
       <div className="input-line">
-        <span className="prompt">visitor@linux-portfolio:{currentPath.join("/")} $</span>
+        <span className="prompt">visitor@wyatts-dell:{currentPath.join("/")} $</span>
         <input
           ref={inputRef}
           type="text"
