@@ -1,11 +1,9 @@
 import React from "react";
-import Terminal from "./components/Terminal";
-// import Component from "./pages/home";
-
+import WindowManager from "./components/WindowManager/WindowManager";
 const App = () => {
   return (
     <div className="app">
-      <Terminal />
+      <WindowManager />
     </div>
   );
 };

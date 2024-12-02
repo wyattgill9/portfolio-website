@@ -1,50 +1,197 @@
+@font-face {
+  font-family: '0xProtoNerd';
+  src: url('../assets/fonts/0xProtoNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #1a1b26;
+  --foreground: #a9b1d6;
+  --cursor: #c0caf5;
+  --selection: #33467c;
+  --prompt: #7aa2f7;
+}
+
 body {
-    margin: 0;
-    background-color: #1e1e2e;
-    color: #cdd6f4;
-    font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .app {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .terminal {
-    background-color: #1e1e2e;
-    padding: 20px;
-    border: 2px solid #cdd6f4;
-    border-radius: 5px;
-    width: 80%;
-    max-height: 80%;
-    overflow-y: auto;
-  }
-  
-  .output {
-    white-space: pre-wrap;
-  }
-  
-  .input-line {
-    display: flex;
-  }
-  
-  .prompt {
-    color: green;
-    margin-right: 5px;
-  }
-  
-  input {
-    background: transparent;
-    border: none;
-    color: #cdd6f4;
-    outline: none;
-    flex-grow: 1;
-  }
+  margin: 0;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: '0xProtoNerd', 'JetBrains Mono', monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  width: 800px;
+  height: 500px;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #1a1b26;
+  color: #a9b1d6;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid #33467c;
+}
+
+.output {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0;
+}
+
+.prompt {
+  color: var(--prompt);
+  margin-right: 0.75rem;
+  white-space: nowrap;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: var(--foreground);
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  flex-grow: 1;
+  caret-color: var(--cursor);
+}
+
+/* Custom scrollbar */
+.terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+.terminal::-webkit-scrollbar-thumb {
+  background: var(--selection);
+  border-radius: 4px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--selection);
+  color: var(--foreground);
+}
+
+.window-manager {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.window {
+  position: absolute;
+  background-color: var(--background);
+  border: 2px solid var(--selection);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-left: 56px;
+}
+
+.window-header {
+  background-color: var(--selection);
+  color: var(--foreground);
+  padding: 4px 8px;
+  cursor: move;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  height: 28px;
+  justify-content: space-between;
+}
+
+.window-controls {
+  display: flex;
+  gap: 4px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.window-controls button {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+  padding: 0;
+}
+
+.window-title {
+  color: var(--foreground);
+  opacity: 0.8;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.minimize { background-color: #e0af68 !important; }
+.maximize { background-color: #9ece6a !important; }
+.close { background-color: #f7768e !important; }
+
+.terminal {
+  width: 100% !important;
+  height: calc(100% - 28px) !important;
+  border: none;
+}
+
+.app-launcher {
+  position: fixed;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--selection);
+  padding: 8px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.app-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.app-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.app-icon:hover {
+  transform: scale(1.1);
+  background-color: var(--cursor);
+}
   
